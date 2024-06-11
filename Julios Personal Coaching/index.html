@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+    <title>Personal-Coaching</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+.barlow-regular {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.julius-sans-one-regular {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+html {
+  margin:0;
+  padding:0;
+}
+
+body {
+    font-family: Barlow;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+    background-color: bisque;
+    margin:0;
+    padding:0;
+}
+
+h1 {
+  font-family: Julius Sans One;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reveal {
+  position: relative;
+  transform: translateX(40px);
+  opacity: 0;
+  transition: all 2s ease;
+  }
+  
+.reveal.active {
+  position: relative;
+  transform: translateX(0px);
+  opacity: 1;
+  }        
+
+.opacity {
+position: relative;
+opacity: 0;
+transition: all 1.4s ease;
+}
+
+.opacity.active {
+position: relative;
+opacity: 1;
+}     
+
+/* Navigationsbar */
+
+nav {
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #232323;
+    color:#ddd;
+    z-index:100;
+    letter-spacing: 2px;
+    transform: scaleY(-600px);
+    opacity: 0;
+    animation:navappear 3s ;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+   
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+@keyframes navappear {
+  from {
+    transform: scaleY(-300px);
+    opacity: 0;
+  }
+to {
+  transform: scaleY(0px);
+  opacity: 1;
+}
+
+}
+
+nav ul li:hover {
+  color: #ffb510;
+}
+
+
+
+/* Titelbox */
+
+#container_eroeffnungseintritt {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+}
+
+.eroeffnungseintritt {
+    height: 110vh;
+    width: 50vw;
+    background-color: #232323;
+}
+
+@keyframes vorhangauf_links {
+    from {transform: translateX(0);}
+    to {transform:translateX(-100vw);}
+}
+
+@keyframes vorhangauf_rechts {
+    from {transform: translateX(0);}
+    to {transform:translateX(100vw);}
+}
+
+#links_eroeffnungseintritt{
+    animation: vorhangauf_links 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+}
+
+#rechts_eroeffnungseintritt{
+    animation: vorhangauf_rechts 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+
+#fakeueberschrift {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height:100vh;
+}
+
+#blumelinks {
+  width: 320px;
+  height: 260px;
+  animation: blueheauf 8s;
+ 
+}
+
+#blumerechts {
+  width: 300px;
+  animation: blueheauf 7s;
+}
+
+
+@keyframes blueheauf {
+
+  from {transform: translateY(100%) scale(0)}
+  to {transform: translateY(0)}
+  
+}
+
+
+.ueberschrift {
+    height: 90vh;
+    text-align: center;
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
+    
+   
+
+}
+
+.ueberschrift h1 {
+    margin-top: 60px;
+    animation:appearfromabove 5s ease both, opacity 3s ease both ;
+    transform: translateY(-18px);
+    opacity: 0;
+    font-size: 40px;
+    
+}
+
+.ueberschrift h1:first-of-type { animation-delay: 0.6s }
+.ueberschrift h1:first-of-type + h1 { animation-delay: 1s;  }
+.ueberschrift h1:first-of-type + h1 +h1 { animation-delay: 1.5s; }
+.ueberschrift h1:first-of-type + h1 +h1 +h1 { animation-delay: 2s;  }
+
+@keyframes appearfromabove {
+  
+    to {transform:translateY(0px);}
+  }
+
+@keyframes opacity {
+   
+    to {opacity: 1;}
+}
+
+.faketitelbox {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/*about me*/
+
+
+
+.aboutme {
+    height: 90vh;
+    background-color: #ffb510;
+   
+    transform: translateY(150px);
+    padding: 30px;
+    position: relative;
+
+}
+
+#aboutmebild {
+  background: url('211SalsaLatinbDance-removebg.png');
+  background-position: right;
+  background-size: 480px;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  
+}
+
+
+
+@keyframes comefrombottom {
+
+    from {transform: translateY(100px);}
+    to {transform:translateY(0);}
+    
+}
+
+
+
+#vorstellungstext h2 span {
+  color: brown;
+  font-family: Julius Sans One;
+  font-style: italic;
+}
+
+#boxkoennen {
+  transform: translateX(-40px), translateY(50px);
+  border: 1px solid brown;
+}
+
+.muster {
+    transform: perspective(600px) rotateY(-45deg) scale(1.1,1.1);
+    background-color: brown;
+    height:400px;
+    width: 100%;
+    position: relative;
+
+ }
+
+ /*Spruch*/
+
+
+
+ .spruch {
+  height: 70vh;
+  width: 100vw;
+  position:relative;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
+ 
+}
+
+
+.trapezoid {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  background-color: #232323;
+  height: 70vh;
+  width: 110%;
+  z-index: 8;
+  position: absolute;
+  top:0;
+  left:-10px;
+  right:0;
+  bottom:0;
+  margin: auto;
+}
+
+
+ #spruchcontainer {
+    display:flex;
+    flex-direction: row;
+    overflow:hidden;
+    white-space:nowrap;
+    color:#ddd;
+    z-index: 10;
+   
+  }
+
+  #spruchcontainer div {
+    margin: 10px;
+    text-align: left;
+  } 
+  
+#ersterspruch { 
+    animation: showup 7s ease infinite ;
+    border: 3px solid #ffb510;
+    border-radius: 20px;
+   
+  }
+  
+#zweiterspruch {
+    animation: reveal2 7s ease infinite ;
+
+  }
+
+#zweiterspruch span {
+    margin-left:-425px;
+    animation: slidein 7s ease infinite;
+  }
+  
+
+  #zweiterspruch span h2 {
+  padding-left: 10px;
+
+  }
+
+
+  @keyframes showup {
+      0% {opacity:0;}
+      20% {opacity:1;}
+      80% {opacity:1;}
+      100% {opacity:0;}
+  }
+  
+  @keyframes slidein {
+      0% { margin-left:-800px; }
+      20% { margin-left:-800px; }
+      35% { margin-left:0px; }
+      100% { margin-left:0px; }
+  }
+  
+  @keyframes reveal2 {
+      0% {opacity:0;width:0px;}
+      20% {opacity:1;width:0px;}
+      30% {width:300px;}
+      80% {opacity:1;}
+      100% {opacity:0;width:355px;}
+  }
+  
+
+
+
+/*Ressourcen*/
+
+.ressourcen {
+    position: relative;
+    height: 100vh;
+    background: url('uohöp.jpg'), bisque;
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: bottom left;
+    background-blend-mode:soft-light;
+}
+
+
+ .ressourcencontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: end;
+    width: 100%;
+   
+ }
+
+.ressourcenbox {
+    height: 24px;
+    width: 65%;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    transition: 1.8s all;
+    padding: 7px;
+    animation: spieleR 6s ease-in;
+ 
+}
+
+
+.ressourcenbox:hover {
+  background-color: #232323;
+    color: #ddd;
+    transform: scale(1.1);
+    border-radius: 0 0 0 30px;
+    margin-bottom: 4px;
+    padding-left: 15px;
+}
+
+
+@keyframes spieleR {
+
+  50% {  background-color: #232323;
+    color: #ddd;
+    transform: scale(1.1);
+    border-radius: 0 0 0 30px;
+    margin-bottom: 4px;
+    padding-left: 15px;}
+  
+}
+
+
+
+
+
+.ressourcenbox:nth-child(2) {animation-delay: 10s;}
+.ressourcenbox:nth-child(7) {animation-delay: 15s;}
+.ressourcenbox:nth-child(6) {animation-delay: 21s;}
+.ressourcenbox:nth-child(1) {animation-delay: 24s;}
+.ressourcenbox:nth-child(9) {animation-delay: 29s;}
+.ressourcenbox:nth-child(4) {animation-delay: 34s;}
+.ressourcenbox:nth-child(8) {animation-delay: 39s;}
+.ressourcenbox:nth-child(5) {animation-delay: 41s;}
+.ressourcenbox:nth-child(3) {animation-delay: 46s;}
+.ressourcenbox:nth-child(10) {animation-delay: 50s;}
+
+
+
+
+/*Ziele*/
+.ziele--container {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    flex-direction: column ; 
+    width: 120px;
+    height: 200px;
+    margin-top: 40px;
+    transition: 1s all ease;
+    animation: mainFadeIn 2s forwards;
+}
+
+
+
+.bild--ziel {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    align-self: flex-start;
+    background-color: brown;
+    margin-left: 28%;
+    margin-bottom: 20%;
+    transition: 1s all ease;
+    animation: spieleZ-bild 6s infinite ;
+
+}
+
+@keyframes spieleZ-bild {
+
+  50% {transform: scale(1.2); background-color: #ffb510;}
+  
+}
+
+.box:hover {
+transform: scale(1.2);
+}
+
+.box:hover .bild--ziel {
+  background-color: #ffb510;
+}
+
+.bild--ziel img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+
+.text--ziel {
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    hyphens: auto;
+    align-self: flex-end;
+    line-height: 30px;
+}
+
+
+
+/*Kontakt*/
+.kontakt {
+    position: relative;
+    height: 90vh;
+    background: #232323;
+    color:#ddd
+   
+}
+
+
+.flexcontainerkontakt {
+display: flex;
+flex-direction: row;
+width: 100%;
+
+}
+
+.andererkontaktbehaelter {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  width: 50vw;
+}
+
+
+.faketitelkontakt {
+  height: 200px;
+  width: 200px;
+
+  
+}
+
+.kontaktinfo {
+  width:70%;
+  text-align: left;
+  line-height: 27px;
+
+}
+
+
+
+@keyframes showTopText {
+    0% { transform: translate3d(0, 100%, 0); }
+    40%, 60% { transform: translate3d(0, 50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  @keyframes showBottomText {
+    0% { transform: translate3d(0, -100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  .animated-title {
+    height: 400px;
+    position: absolute;
+    left: 40%;
+    top: 22%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+  }
+
+  .animated-title > div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  .animated-title > div div {
+    padding: 2vmin 0;
+    position: absolute;
+  }
+
+  .animated-title > div div span {
+    display: block;
+  }
+
+  .animated-title > div.text-top {
+    border-bottom: 1px solid #ddd;
+    top: 0;
+  }
+
+  .animated-title > div.text-top div {
+ 
+
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+
+
+  .animated-title > div.text-bottom {
+    bottom: 0;
+  }
+
+  .animated-title > div.text-bottom div {
+   
+    
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+  }
+
+
+
+
+/*Namencontainer - Kontakt */
+
+
+#kontaktboxstylie {
+  width: 50vw;
+  position: relative;
+  
+}
+
+.containerNEW {
+  height: 90vh;
+  background: #232323;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  .boxNEW {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .titleNEW {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #ffb510;
+        position: absolute;
+       
+        display: flex;
+      }
+
+      h1 {
+        
+        color: #fff;
+        font-size: 20px;
+      
+       
+       
+        opacity: 0;
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        span {
+          width:0px;
+          height: 0px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+
+          background: #ffb510;
+          
+          
+         
+          animation-delay: 6s;
+
+          margin-left: 5px;
+          margin-top: -10px;
+          position: absolute;
+          bottom: 13px;
+          right: -12px;
+
+        }
+      }
+    }
+
+    .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin-top: -10px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: brown;
+        position: absolute;
+
+       
+        display: flex;
+      }
+
+      p {
+     
+        animation-delay: 7.2s;
+        
+        opacity: 0;
+
+         font-weight: 400;
+        
+        color: #ffffff;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
+}
+
+
+
+
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #ffb510;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #e9d856;
+    opacity: 1;
+    bottom: 45px;
+  }
+   65% {
+      width: 7px;
+    height: 7px;
+      bottom: 0px;
+      width: 15px
+   }
+   80% {
+      width: 10px;
+    height: 10px;
+      bottom: 20px
+   }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #ffb510;
+    border: 0px solid #222;
+    bottom: 13px;
+
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+
+
+footer {
+  width: 50vw;
+  height: 80px;
+  background: #ffb510;
+  position: absolute;
+  bottom:0;
+  right: -900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+  
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: #232323;
+    
+
+   
+  }
+}
+
+@keyframes top {
+  0% {
+    opacity: 0;
+     right: -300px;
+  }
+  100% {
+    opacity: 1;
+     right: 0px;
+
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+body {
+  position:relative;
+}
+
+
+
+  nav {
+    height: 14vh;
+    width: 100vw;
+    position: -webkit-sticky;
+  }
+
+  nav ul {
+    flex-direction: column;
+}
+
+
+#blumelinks {
+  width: 300px;
+  height: 260px;
+
+ 
+}
+
+#blumerechts {
+ display:none;
+
+}
+
+#aboutme {
+  text-align: center;
+}
+
+#aboutme p {
+  font-size: 22px;
+}
+
+#aboutmebild {
+  background-position:  center bottom;
+  background-size: 340px;
+}
+
+.muster {
+  transform: perspective(600px) rotateY(-35deg) scale(1.1,1.1);
+  height:240px;
+}
+
+.spruch {
+  background-color: #232323;
+}
+
+#spruchcontainer div {
+  margin: 10px;
+  text-align: center;
+} 
+
+#spruchcontainer {
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+#zweiterspruch span {
+  margin-bottom:-425px;
+
+}
+
+@keyframes slidein {
+  0% { margin-bottom:-800px; }
+  20% { margin-bottom:-800px; }
+  35% { margin-bottom:0px; }
+  100% { margin-bottom:0px; }
+}
+
+
+#zweiterspruch span h2 {
+  padding-left: 0;
+  }
+
+  @keyframes reveal2 {
+    0% {opacity:0;height:0px;}
+    20% {opacity:1;height:0px;}
+    30% {height:200px;}
+    80% {opacity:1;}
+    100% {opacity:0;height:255px;}
+}
+
+.spruch {
+
+  justify-content: bottom;
+  align-items:flex-end;
+ 
+}
+
+#ersterspruch { 
+  animation: showup 7s ease infinite ;
+  background-color: #ffb510;
+ 
+}
+
+.ziele--container {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  margin-top: 60px;
+  margin-bottom: 30px;
+
+}
+
+.text--ziel {
+  font-size: 20px;
+}
+
+.bild--ziel {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+
+  margin-left: 10px;
+  margin-bottom: 20%;
+
+
+}
+
+.kontakt {
+  flex-direction: column;
+  background-color: #232323;
+}
+
+.andererkontaktbehaelter {
+  width: 100vw;
+  height: 100%;
+  background-color: #232323;
+ border: 3px solid #232323 ;
+}
+
+.faketitelkontakt {
+ display: none;
+  
+}
+
+.kontaktinfo {
+
+ width: 80vw;
+ font-size: 22px;
+ line-height: 40px;
+
+}
+
+
+.flexcontainerkontakt {
+  display: flex;
+  flex-direction: column;
+  
+  }
+
+  #kontaktboxstylie {
+    width: 100vw;
+    height: 40vh;
+  
+
+    
+  }
+
+ .containerNEW {
+  height: 40vh;
+  align-items:flex-start;
+ }
+
+  footer {
+    width: 100vw;
+  }
+
+  .titelkontakt {
+    position: relative;
+    height: 30vh;
+    width: 100vw;
+
+  }
+
+
+  .animated-title {
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+
+
+
+
+
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+
+    <nav>
+        <ul>
+            <li>Mag. Julio Nunez-Oviedo</li>
+            <li> +43 6507026268</li>
+            <li><a href="mailto:office@julion-coaching.life?subject=Personal-Coaching">office@julion-coaching.life</a></li>
+        </ul>
+
+    </nav>
+ 
+   
+<!--1. Titel-->
+    <div>
+
+        <div id="fakeueberschrift">
+        <img id="blumerechts" src="../Julios Personal Coaching/blumerechts-removebg-preview.png" alt="personal-coaching">
+        <img id="blumelinks" src="../Julios Personal Coaching/blumelinks-removebg-preview.png" alt="personal-coaching"> 
+            
+
+
+        </div>
+ 
+        <div class="ueberschrift">
+            <h1>Personal-</h1>
+            <h1>Coaching</h1>
+            <h1>Consulting</h1>
+            <h1>Helping</h1>
+        </div>
+
+
+        <div id="container_eroeffnungseintritt">
+            <div class="eroeffnungseintritt" id="links_eroeffnungseintritt"></div>
+            
+            <div class="eroeffnungseintritt" id="rechts_eroeffnungseintritt"></div>
+        </div>
+
+    
+
+    </div>
+
+   <!-- <div class="faketitelbox"> </div>-->
+
+<!--2. Über Julio-->
+    <div class="aboutme">
+ <div id="aboutmebild" class="opacity"> </div>
+        <div id="vorstellungstext"> 
+
+        <h1 class="reveal">Mag. Julio Nunez-Oviedo</h1>
+        <h2><span class="auto-type reveal">Unternehmer</span></h2>
+        <div id="boxkoennen"></div><p class="reveal"> Familienaufstellung, Unternehmensberatung, <br>
+        Lebensziele, Emotionscode, Musiktherapie,...
+        </p>
+
+        </div>
+
+       
+
+        <div class="muster"></div>
+
+    
+    </div>
+
+<div class="spruch">
+    <div class="trapezoid"> </div>
+    <div id="spruchcontainer"> 
+        <div id="ersterspruch" class="playagain"><h1>Life is emotion</h1></div> 
+        <div id="zweiterspruch" class="playagain"> <span class="playagain"><h2>emotion is moving</h2></span></div>
+    </div>
+
+</div>
+    
+
+   
+<!--3. Ressourcen & Methoden-->
+    <div class="ressourcen">
+
+      <h1 class="sectiontitle opacity">Meine Ressourcen und Methoden</h1> 
+
+        <div class="ressourcencontainer reveal"> 
+       
+            <div class="ressourcenbox">Tanz- & Musiktherapie</div>
+            <div class="ressourcenbox">Emotionscode</div>
+            <div class="ressourcenbox">Aufstellungsarbeit</div>
+            <div class="ressourcenbox">Meditation</div>
+            <div class="ressourcenbox">Selbstcoaching</div>
+            <div class="ressourcenbox">Entspannungstechniken</div>
+            <div class="ressourcenbox">Kinesologie</div>
+            <div class="ressourcenbox">Autosuggestionen</div>
+            <div class="ressourcenbox">Energetische Massagen</div>
+            <div class="ressourcenbox">Autokonditionierungstechniken</div>
+            <div class="ressourcenbox">Mentaltraining</div>
+
+        </div>
+
+    </div>
+
+<!--4. Erreichbare Ziele-->
+
+<div class="ziele">
+
+    <h1 class="sectiontitle opacity"> Deine baldigen Ziele durch mich</h1>
+
+    <div class="ziele--container">
+
+            <div class="box opacity">
+              <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/money-management.png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Mehr Geld </div>
+            </div>
+
+            <div class="box opacity">
+                <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/liebe.png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Wohlgeformter Körper </div>
+            </div>
+
+            <div class="box">
+                <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/wellness-coach.png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Authentische Lebensfreude </div>
+            </div>
+
+            <div class="box">
+                
+                <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/personliche-entwicklung (1).png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Wissen, wer du wirklich bist </div>
+            </div>
+
+            <div class="box">
+                
+                <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/life-coach.png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Aufstiegschancen in der Arbeit </div>
+            </div>
+
+            <div class="box">
+                <div class="bild--ziel opacity"> <img src="../Julios Personal Coaching/personliche-entwicklung.png" alt="personalcoaching"> </div>
+                <div class="text--ziel opacity"> Erfüllung deiner wahren Wünsche </div>
+            </div>
+
+
+
+    </div>
+
+
+
+
+            
+    </div>
+
+</div>
+
+<!--5. Kontakt-->
+    <div class="kontakt">
+        
+            <div class="titelkontakt">
+                <div class="animated-title">
+                    <div class="text-top">
+                    <div class="kontaktdatendiv">
+                        <span><p>Sei bereit</p></span>
+                        <span><p>für deine Reise</p></span>
+                    </div>
+                    </div>
+                    <div class="text-bottom">
+                    <div class="ueberschriftkontakt"><h1>&#8594; Kontaktdaten:</h1></div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="flexcontainerkontakt">
+
+                    <div class="andererkontaktbehaelter"> 
+                
+                        <div class="faketitelkontakt"></div>
+                    
+                        <div class="kontaktinfo">
+                            <p><b>Tel:</b> <br>+43 6507026268</p>
+                            <a href="mailto:office@julion-coaching.life?subject=Personal-Coaching">
+                            <p><b>E-Mail: </b><br>office@julion-coaching.life</p></a>
+
+                            <a href="https://www.google.com/maps/place/Mariahilfer+Str.+51,+1060+Wien/@48.1993524,16.3517037,17z/data=!4m6!3m5!1s0x476d078ee595fa2b:0x233ba103ad78b98a!8m2!3d48.1993489!4d16.3542786!16s%2Fg%2F11c4ldjg4q?entry=ttu">
+                            <p><b>Adresse:</b> <br>Mariahilferstraße 51, 6. Hof, Terra-Eingang</p></a>
+                        </div>
+
+                    </div>
+
+                    <div id="kontaktboxstylie">
+
+                        <div class="containerNEW">
+                            <div class="boxNEW">
+                        
+                                <div class="titleNEW">
+                                    <span class="block namenblock" ></span>
+                                    <h1 class="namegross">Julio Nunez-Oviedo<span class="punktchen"></span></h1>
+                                </div>
+                        
+                                <div class="role">
+                                    <div class="block brownblock"></div>
+                                    <p class="beruftext">Personal-Coach</p>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        
+                        <footer class="footer">
+                            <div class="texto">
+                                <span> &#8594; Anrufen und leicht einen Termin vereinbaren</span>
+                            </div>
+                        </footer>
+                        
+                    
+                    </div>
+
+        </div>
+
+         
+
+    </div>
+
+
+
+
+
+   
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+    let typed = new Typed(".auto-type", {
+    strings: ["Personal-Coach", "Künstler", "Personal-Coach", "Unternehmer", "Personal-Coach"],
+    typeSpeed: 150,
+    backSpeed: 150,
+    looped: true
+
+})
+
+window.addEventListener('scroll', reveal);
+    
+    function reveal() {
+    let reveals = document.querySelectorAll('.reveal');
+    
+    for(var i = 0; i < reveals.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let revealtop = reveals[i].getBoundingClientRect().top;
+    let revealpoint = 90;
+    
+    if(revealtop < windowheight - revealpoint) {
+    reveals[i].classList.add('active');
+    }
+    
+    }
+    }
+    
+    window.addEventListener('scroll', opacity);
+    
+    function opacity() {
+    let opacitys = document.querySelectorAll('.opacity');
+    
+    for(var i = 0; i < opacitys.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let opacitytop = opacitys[i].getBoundingClientRect().top;
+    let opacitypoint = 90;
+    
+    if(opacitytop < windowheight - opacitypoint) {
+    opacitys[i].classList.add('active');
+    }
+    
+    }
+    }
+
+
+
+    window.addEventListener('scroll', aboutme);
+    
+    function aboutme() {
+    
+    let aboutmes = document.querySelectorAll('.aboutme');
+
+    
+    for(var i = 0; i < aboutmes.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let aboutmetop = aboutmes[i].getBoundingClientRect().top;
+    let aboutmepoint = 60;
+    
+    if(aboutmetop < windowheight - aboutmepoint) {
+        aboutmes[i].style.animation = "comefrombottom 0.5s ease both";
+    }
+    
+    }
+    }
+
+
+      
+
+    window.addEventListener('scroll', kontaktdatendiv);
+    
+    function kontaktdatendiv() {
+    
+    let kontaktdatendivs = document.querySelectorAll('.kontaktdatendiv');
+
+    
+    for(var i = 0; i < kontaktdatendivs.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let kontaktdatendivtop = kontaktdatendivs[i].getBoundingClientRect().top;
+    let kontaktdatendivpoint = 90;
+    
+    if(kontaktdatendivtop < windowheight - kontaktdatendivpoint) {
+        kontaktdatendivs[i].style.animation = "showTopText 1s both ";
+    }
+    
+    }
+    }
+
+    
+    window.addEventListener('scroll', ueberschriftkontakt);
+    
+    function ueberschriftkontakt() {
+    
+    let ueberschriftkontakts = document.querySelectorAll('.ueberschriftkontakt');
+
+    
+    for(var i = 0; i < ueberschriftkontakts.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let ueberschriftkontakttop = ueberschriftkontakts[i].getBoundingClientRect().top;
+    let ueberschriftkontaktpoint = 90;
+    
+    if(ueberschriftkontakttop < windowheight - ueberschriftkontaktpoint) {
+        ueberschriftkontakts[i].style.animation = "showBottomText 0.5s both ";
+    }
+    
+    }
+    }
+
+    
+    window.addEventListener('scroll', namenblock);
+    
+    function namenblock() {
+    
+    let namenblocks = document.querySelectorAll('.namenblock');
+
+    
+    for(var i = 0; i < namenblocks.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let namenblocktop = namenblocks[i].getBoundingClientRect().top;
+    let namenblockpoint = 90;
+    
+    if(namenblocktop < windowheight - namenblockpoint) {
+        namenblocks[i].style.animation = "mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards";
+        namenblocks[i].style.animationDelay = "4s"
+    }
+    
+    }
+    }
+
+    
+    window.addEventListener('scroll', namegross);
+    
+    function namegross() {
+    
+    let namegrosss = document.querySelectorAll('.namegross');
+
+    
+    for(var i = 0; i < namegrosss.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let namegrosstop = namegrosss[i].getBoundingClientRect().top;
+    let namegrosspoint = 90;
+    
+    if(namegrosstop < windowheight - namegrosspoint) {
+        namegrosss[i].style.animation = "mainFadeIn 2s forwards";
+        namegrosss[i].style.animationDelay = "5.6s"
+    }
+    
+    }
+    }
+
+
+
+
+    window.addEventListener('scroll', punktchen);
+    
+    function punktchen() {
+    
+    let punktchens = document.querySelectorAll('.punktchen');
+
+    
+    for(var i = 0; i < punktchens.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let punktchentop = punktchens[i].getBoundingClientRect().top;
+    let punktchenpoint = 50;
+    
+    if(punktchentop < windowheight - punktchenpoint) {
+    punktchens[i].style.webkitAnimation= "load 0.6s cubic-bezier(.74, .06, .4, .92) forwards";
+    punktchens[i].style.animation = "popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards"
+    punktchens[i].style.animationDelay = "6s"
+    }
+    
+    }
+    }
+
+
+
+    window.addEventListener('scroll', footer);
+    
+    function footer() {
+    
+    let footers = document.querySelectorAll('.footer');
+
+    
+    for(var i = 0; i < footers.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let footertop = footers[i].getBoundingClientRect().top;
+    let footerpoint = 50;
+    
+    if(footertop < windowheight - footerpoint) {
+
+    footers[i].style.animation = "top 0.8s forwards"
+
+    footers[i].style.animationDelay = "8s";
+    }
+    
+    }
+    }
+
+
+    window.addEventListener('scroll', beruftext);
+    
+    function beruftext() {
+    
+    let beruftexts = document.querySelectorAll('.beruftext');
+
+    
+    for(var i = 0; i < beruftexts.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let beruftexttop = beruftexts[i].getBoundingClientRect().top;
+    let beruftextpoint = 50;
+    
+    if(beruftexttop < windowheight - beruftextpoint) {
+
+    beruftexts[i].style.animation = "secFadeIn 2s forwards";
+    beruftexts[i].style.animationDelay= "7.2s"
+
+    }
+    
+    }
+    }
+
+
+    window.addEventListener('scroll', brownblock);
+    
+    function brownblock() {
+    
+    let brownblocks = document.querySelectorAll('.brownblock');
+
+    
+    for(var i = 0; i < brownblocks.length; i++) {
+    
+    let windowheight = window.innerHeight;
+    let brownblocktop = brownblocks[i].getBoundingClientRect().top;
+    let brownblockpoint = 50;
+    
+    if(brownblocktop < windowheight - brownblockpoint) {
+
+    brownblocks[i].style.animation = "secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards";
+    brownblocks[i].style.animationDelay= "6s"
+
+    }
+    
+    }
+    }
+
+
+    </script>
+
+</body>
+
+</html>
